@@ -7,9 +7,13 @@ const Noteitem = (props) => {
     <div className='col-md-3 my-3'>
         <div className="card">
             <div className="card-body">
-            <h5 className="card-title">{note.title}</h5>
+                <div className="d-flex">
+                    <h5 className="card-title">{note.title}</h5>
+                    <i className="fa-solid mx-2 fa-pen-to-square"></i>
+                    <i className="fa-solid mx-2 fa-trash-can"></i>
+                </div>
             <p className="card-text">{note.description}</p>
-            <a href="/" class="btn btn-primary">Go somewhere</a>
+            
             </div>
         </div>
     </div>
