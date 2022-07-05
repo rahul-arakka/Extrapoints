@@ -5,7 +5,7 @@ const Addnote = () => {
     const context = useContext(noteContext);
     const {addNote} = context;
 
-    const [field, setField] = useState({title:"", description:"", tag:""})
+    const [field, setField] = useState({title:"", description:"", tag:"default"})
 
     const onChange = (e)=>{
         setField({...field, [e.target.name]: e.target.value})
@@ -43,6 +43,18 @@ const Addnote = () => {
             className="form-control"
             id="description"
             name="description"
+            onChange={onChange}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="tag" className="form-label">
+            Tag
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="tag"
+            name="tag"
             onChange={onChange}
           />
         </div>
