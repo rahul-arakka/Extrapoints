@@ -1,18 +1,25 @@
 import React, {useContext, useEffect, useRef, useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 import noteContext from "../context/notes/noteContext";
 import Addnote from './Addnote';
 import Noteitem from './Noteitem';
 
 const Notes = () => {
+  const navigate = useNavigate();
   const context = useContext(noteContext);
-  const {notes, fetchNotes, editNote } = context;
+  const {notes, fetchNotes, editNote, showAlert } = context;
   useEffect(() => {
-    fetchNotes();
+    if(localStorage.getItem('token'))
+      fetchNotes();
+    else {
+      navigate('/login')
+      showAlert("Please Login to preceed");
+    }
     // eslint-disable-next-line
   }, [])
 
   // useRef used to refer a component, We can show a Edit note modal using the edit icon and also through the modal button
-  const [field, setField] = useState({id: "", etitle:"", edescription:"", etag:"dafault"})
+  const [field, setField] = useState({id: "", etitle:"", edescription:"", etag:""})
 
   const refer = useRef(null);
   const refClose = useRef(null);
@@ -102,7 +109,10 @@ const Notes = () => {
               </div>
             </div>
           </div>
-        <h2>Your Notes</h2>
+        <h2 className='container mx-2 my-2'>Your Notes</h2>
+        <div className="container mx-3">
+          {notes.length === 0 && <strong>No notes to display</strong>}
+        </div>
         {notes.map((note)=>{
             return <Noteitem key={note._id} updateNote ={updateNote} note ={note}/>
         })}

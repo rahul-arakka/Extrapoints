@@ -5,6 +5,7 @@ const NoteState = (props) => {
   const host = 'http://localhost:5000';
   const notesInitial = [];
   const [notes, setNotes] = useState(notesInitial);
+  const [alert, setAlert] = useState({message:"", type:""});
   
   const fetchNotes = async()=>{
     const response = await fetch(`${host}/api/notes/fetchnotes`, {
@@ -33,17 +34,18 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({title, description, tag})
     })
-    const json = await response.json();
-    console.log(json);
+    const note = await response.json();
+    // console.log(json);
 
     // Logic to add Note in front-end.
     // console.log("note added");
-    const note = {
-      title: title,
-      description: description,
-      tag: tag
-    };
+    // const note = {
+    //   title: title,
+    //   description: description,
+    //   tag: tag
+    // };
     setNotes(notes.concat(note));
+    showAlert("Note Added succesfully", 'success')
   };
 
   // Delete a note
@@ -56,16 +58,17 @@ const NoteState = (props) => {
         "Content-Type": "application/json"
       },
     })
-    const json = await response.json();
-    console.log(json);
+    await response.json();
+    // console.log(json);
 
-    console.log("deleting a note with id "+ id);
+    // console.log("deleting a note with id "+ id);
 
     // Logic to delete a note in front-end
     const newNotes = notes.filter((note) => {
       return note._id !== id;
     });
     setNotes(newNotes);
+    showAlert("Note Deleted succesfully", 'success')
     
   };
 
@@ -96,12 +99,25 @@ const NoteState = (props) => {
     
   }
   setNotes(newNotes);
+  showAlert("Note Updated succesfully", 'success')
+  
 };
 
 
+// Alert Function
+const showAlert = (message, type)=>{
+  setAlert({
+    message: message,
+    type: type
+  })
+  setTimeout(() => {
+    setAlert(null);
+  }, 2000);
+}
+
   return (
     <NoteContext.Provider
-      value={{ notes, setNotes, addNote, deleteNote, editNote, fetchNotes }}
+      value={{ notes, setNotes, addNote, deleteNote, editNote, fetchNotes, showAlert, alert }}
     >
       {props.children}
     </NoteContext.Provider>

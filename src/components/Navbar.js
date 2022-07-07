@@ -1,7 +1,18 @@
-import React from 'react'
-import {Link} from "react-router-dom";
+import React, {useContext} from 'react'
+import {Link, useNavigate} from "react-router-dom";
+import noteContext from '../context/notes/noteContext';
+
 
 function Navbar(){
+  const navigate = useNavigate();
+  const context = useContext(noteContext)
+  const {showAlert} = context
+  
+  const handleLogout =() =>{
+    localStorage.removeItem('token');
+    showAlert("Logged out Successfully", 'success')
+    navigate('/login');
+  }
   return (
     <>
     <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
@@ -15,10 +26,10 @@ function Navbar(){
               <Link className="nav-link" to="/about">About</Link>
             </li>
             </ul>
-          <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-            <button className="btn btn-outline-success" type="submit">Search</button>
-          </form>
+            {!localStorage.getItem('token') ? <div>
+            <Link className="btn btn-light mx-1" role="button" to="/login">Login</Link>
+            <Link className="btn btn-light mx-1" role="button" to="/signup ">Sign Up</Link>
+            </div>:<button className="btn btn-light mx-1" onClick={handleLogout} >Logout</button>}
         </div>
       </div>
     </nav>

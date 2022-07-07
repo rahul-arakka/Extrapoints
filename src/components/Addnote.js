@@ -5,7 +5,7 @@ const Addnote = () => {
     const context = useContext(noteContext);
     const {addNote} = context;
 
-    const [field, setField] = useState({title:"", description:"", tag:"default"})
+    const [field, setField] = useState({title:"", description:"", tag:""})
 
     const onChange = (e)=>{
         setField({...field, [e.target.name]: e.target.value})
@@ -14,6 +14,7 @@ const Addnote = () => {
     const handleClick = (e)=>{
         e.preventDefault();
         addNote(field.title, field.description, field.tag);
+        setField({title:"", description:"", tag:""});
 
     }
 
@@ -32,6 +33,9 @@ const Addnote = () => {
             name="title"
             onChange={onChange}
             aria-describedby="titleHelp"
+            value={field.title}
+            minLength={5}
+            required
           />
         </div>
         <div className="mb-3">
@@ -44,6 +48,9 @@ const Addnote = () => {
             id="description"
             name="description"
             onChange={onChange}
+            value={field.description}
+            minLength={5}
+            required
           />
         </div>
         <div className="mb-3">
@@ -56,6 +63,9 @@ const Addnote = () => {
             id="tag"
             name="tag"
             onChange={onChange}
+            value={field.tag}
+            minLength={3}
+            required
           />
         </div>
 
