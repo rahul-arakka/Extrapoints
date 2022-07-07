@@ -11,8 +11,7 @@ const NoteState = (props) => {
     const response = await fetch(`${host}/api/notes/fetchnotes`, {
       method:'GET',
       headers: {
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJjMTdlZjcwZmIyNmVmNTQ0NmVkYmYyIn0sImlhdCI6MTY1Njg0ODExOX0.IMGQ3g-ff3ZzQGgUjXKGqtXOxaib7n_cRhOQQRWoAW0",
+        "auth-token": localStorage.getItem('token'),
         "Content-Type": "application/json"
       } 
 
@@ -28,8 +27,7 @@ const NoteState = (props) => {
     const response = await fetch(`${host}/api/notes/addnote`, {
       method:'POST',
       headers: {
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJjMTdlZjcwZmIyNmVmNTQ0NmVkYmYyIn0sImlhdCI6MTY1Njg0ODExOX0.IMGQ3g-ff3ZzQGgUjXKGqtXOxaib7n_cRhOQQRWoAW0",
+        "auth-token": localStorage.getItem('token'),
         "Content-Type": "application/json"
       },
       body: JSON.stringify({title, description, tag})
@@ -53,8 +51,7 @@ const NoteState = (props) => {
     const response = await fetch(`${host}/api/notes/deletenote/${id}`,{
       method:'DELETE',
       headers: {
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJjMTdlZjcwZmIyNmVmNTQ0NmVkYmYyIn0sImlhdCI6MTY1Njg0ODExOX0.IMGQ3g-ff3ZzQGgUjXKGqtXOxaib7n_cRhOQQRWoAW0",
+        "auth-token": localStorage.getItem('token'),
         "Content-Type": "application/json"
       },
     })
@@ -77,8 +74,7 @@ const NoteState = (props) => {
     const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
       method: 'PUT',
       headers: {
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJjMTdlZjcwZmIyNmVmNTQ0NmVkYmYyIn0sImlhdCI6MTY1Njg0ODExOX0.IMGQ3g-ff3ZzQGgUjXKGqtXOxaib7n_cRhOQQRWoAW0",
+        "auth-token": localStorage.getItem('token'),
         "Content-Type": "application/json"
       },
       body: JSON.stringify({title, description, tag})
