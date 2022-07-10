@@ -44,61 +44,58 @@ const Signup = () => {
   };
 
   return (
-    <div className="container mt-2">
-      <h1>Create account to use Extrapoints</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="my-3">
-          <label htmlFor="name" className="form-label">
-            Name
-          </label>
+    <>
+    <div className="formDiv">
+      <h1 className="formHeading">Create account to use Extrapoints</h1>
+      <form onSubmit={handleSubmit} id="form">
+        <div className="my-3 d-flex">
+        <i class="fa-solid fa-pen"></i>
           <input
             type="text"
             className="form-control"
             id="name"
             aria-describedby="emailHelp"
             name="name"
+            placeholder="Enter your Name"
             value={credential.name}
             onChange={onChange}
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email address
-          </label>
+        <div className="mb-3 d-flex">
+        <i className="fa-solid fa-envelope"></i>
           <input
             type="email"
             className="form-control"
             id="email"
             aria-describedby="emailHelp"
             name="email"
+            placeholder="Enter your Email"
             value={credential.email}
             onChange={onChange}
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
+        <div className="mb-3 d-flex">
+        <i class="fa-solid fa-key"></i>
           <input
             type="password"
             className="form-control"
             id="password"
             name="password"
+            placeholder="Enter Your Password"
             value={credential.password}
             onChange={onChange}
             minLength={5}
             required
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="cpassword" className="form-label">
-            Password
-          </label>
+        <div className="mb-3 d-flex">
+        <i class="fa-solid fa-key"></i>
           <input
             type="password"
             className="form-control"
             id="cpassword"
             name="cpassword"
+            placeholder="Confirm Password"
             value={credential.cpassword}
             onChange={onChange}
             minLength={5}
@@ -106,11 +103,14 @@ const Signup = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <div className="btnlen">
+          <button type="submit" className="btn btn-dark">
           Sign Up
-        </button>
+          </button>
+        </div>
       </form>
     </div>
+    </>
   );
 };
 

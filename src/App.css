@@ -37,6 +37,78 @@
   }
 }
 
-i{
+.card-body i{
   cursor: pointer;
+}
+
+body{
+  background: url('./images/signup_page.jpg') no-repeat center center fixed;
+  background-size: cover;
+  top: 0px;
+  height: 600px;
+  width: 100%;  
+}
+#form input, #form textarea{
+  background: none;
+  outline: none;
+  border: none;
+  /* width: 300px; */
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
+  font-size: x-large;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  margin: 5px;
+  padding: 10px;
+}
+.formDiv input::placeholder, .formDiv textarea::placeholder {
+  color: rgb(2, 2, 2);
+  opacity: 1; 
+}
+
+.formDiv{
+  /* border: 2px solid blue; */
+  float: right;
+  margin-right: 195px;
+  margin-top: 35px;
+}
+
+#form textarea{
+  border: 1px solid black;
+}
+
+
+#form i{
+font-size: x-large;
+padding-top: 15px;
+padding-right: 20px;
+}
+
+.formHeading{
+  border-bottom: 3px solid brown;
+  margin: 21px 21px 21px 0px;
+  padding: 20px 10px 10px 0px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+}
+.addNote{
+  float: left;
+  width: 500px;
+  margin-left: 10;
+  margin-top: 1px;
+}
+.btnlen{
+  display: flex;
+}
+
+#form button{
+  margin: 10px auto;
+  padding: 7px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.card{
+  background: none;
+  outline: none;
+  border: 2px solid black;
 }

@@ -1,5 +1,6 @@
 import React, {useContext, useState} from "react";
 import noteContext from "../context/notes/noteContext";
+import '../App.css'
 
 const Addnote = () => {
     const context = useContext(noteContext);
@@ -19,49 +20,46 @@ const Addnote = () => {
     }
 
   return (
-    <div className="container">
-      <form className="container my-2">
-        <h2>Add a Note</h2>
-        <div className="mb-3">
-          <label htmlFor="title" className="form-label">
-            Title
-          </label>
+    <div className="formDiv addNote">
+      <h1 className="formHeading">Add a Note</h1>
+      <form className="my-2" id="form">
+        <div className="mb-3 d-flex">
+        <i class="fa-solid fa-pen-clip"></i>
           <input
             type="text"
             className="form-control"
             id="title"
             name="title"
             onChange={onChange}
+            placeholder="Enter Title"
             aria-describedby="titleHelp"
             value={field.title}
             minLength={5}
             required
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="description" className="form-label">
-            Description
-          </label>
-          <input
-            type="text"
-            className="form-control"
+        <div className="mb-3 d-flex">
+        <i class="fa-solid fa-file-pen"></i>
+        <textarea className="form-control"
             id="description"
             name="description"
+            placeholder="Enter Description"
             onChange={onChange}
             value={field.description}
             minLength={5}
             required
-          />
+            cols="15" rows="5"> 
+        </textarea>
+          
         </div>
-        <div className="mb-3">
-          <label htmlFor="tag" className="form-label">
-            Tag
-          </label>
+        <div className="mb-3 d-flex">
+        <i class="fa-solid fa-tag"></i>
           <input
             type="text"
             className="form-control"
             id="tag"
             name="tag"
+            placeholder="Enter Tag"
             onChange={onChange}
             value={field.tag}
             minLength={3}
