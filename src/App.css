@@ -42,10 +42,10 @@
 }
 
 body{
-  background: url('./images/signup_page.jpg') no-repeat center center fixed;
+  background: url('./images/add_note2.jfif') no-repeat center center fixed;
   background-size: cover;
   top: 0px;
-  height: 600px;
+  height: 100%;
   width: 100%;  
 }
 #form input, #form textarea{
@@ -58,7 +58,7 @@ body{
   font-size: x-large;
   border-bottom: 1px solid rgb(0, 0, 0);
   margin: 5px;
-  padding: 10px;
+  padding: 7px;
 }
 .formDiv input::placeholder, .formDiv textarea::placeholder {
   color: rgb(2, 2, 2);
@@ -66,10 +66,10 @@ body{
 }
 
 .formDiv{
-  /* border: 2px solid blue; */
   float: right;
-  margin-right: 195px;
-  margin-top: 35px;
+  width: 50%;
+  margin: 7px 11px;
+  padding: 7px;
 }
 
 #form textarea{
@@ -85,17 +85,30 @@ padding-right: 20px;
 
 .formHeading{
   border-bottom: 3px solid brown;
-  margin: 21px 21px 21px 0px;
-  padding: 20px 10px 10px 0px;
+  width: 550px;
+  margin: 4px auto;
+  padding: 15px 10px 10px 0px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 600;
 }
-.addNote{
-  float: left;
-  width: 500px;
-  margin-left: 10;
-  margin-top: 1px;
+.noteBox{
+  /* float: left; */
+  width: 670px;
+  margin: 7px;
+  padding: 3px;
 }
+
+.addNote{
+  width: 500px;
+  margin: auto;
+}
+
+#form{
+  width: 65%;
+  margin: auto;
+  padding: 7px 11px;
+}
+
 .btnlen{
   display: flex;
 }
@@ -106,9 +119,24 @@ padding-right: 20px;
   width: 100px;
   border-radius: 10px;
 }
+/* .notePage{
+  display: flex;
+} */
 
 .card{
   background: none;
   outline: none;
   border: 2px solid black;
 }
+
+#noNotes{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+}
+/* 
+@media only screen and ( max-width: 650px) {
+  .notePage{
+    display: block;
+  }
+
+} */

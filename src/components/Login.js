@@ -60,7 +60,7 @@ const Login = () => {
           />
         </div>
         <div className="mb-3 d-flex">
-        <i class="fa-solid fa-key"></i>
+        <i className="fa-solid fa-key"></i>
           <input
             type="password"
             className="form-control"

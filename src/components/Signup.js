@@ -15,6 +15,9 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(credential.cpassword !== credential.password){
+      return showAlert("Confirm password doesn't match", 'warning');
+    }
     const response = await fetch("http://localhost:5000/api/auth/createuser", {
       method: "POST",
       headers: {
@@ -49,7 +52,7 @@ const Signup = () => {
       <h1 className="formHeading">Create account to use Extrapoints</h1>
       <form onSubmit={handleSubmit} id="form">
         <div className="my-3 d-flex">
-        <i class="fa-solid fa-pen"></i>
+        <i className="fa-solid fa-pen"></i>
           <input
             type="text"
             className="form-control"
@@ -58,7 +61,9 @@ const Signup = () => {
             name="name"
             placeholder="Enter your Name"
             value={credential.name}
+            minLength={3}
             onChange={onChange}
+            required
           />
         </div>
         <div className="mb-3 d-flex">
@@ -72,10 +77,11 @@ const Signup = () => {
             placeholder="Enter your Email"
             value={credential.email}
             onChange={onChange}
+            required
           />
         </div>
         <div className="mb-3 d-flex">
-        <i class="fa-solid fa-key"></i>
+        <i className="fa-solid fa-key"></i>
           <input
             type="password"
             className="form-control"
@@ -89,7 +95,7 @@ const Signup = () => {
           />
         </div>
         <div className="mb-3 d-flex">
-        <i class="fa-solid fa-key"></i>
+        <i className="fa-solid fa-key"></i>
           <input
             type="password"
             className="form-control"

@@ -20,11 +20,11 @@ const Addnote = () => {
     }
 
   return (
-    <div className="formDiv addNote">
+    <div className="addNote">
       <h1 className="formHeading">Add a Note</h1>
-      <form className="my-2" id="form">
+      <form className="my-2" id="form" style={{width:'90%'}}onSubmit={handleClick}>
         <div className="mb-3 d-flex">
-        <i class="fa-solid fa-pen-clip"></i>
+        <i className="fa-solid fa-pen-clip"></i>
           <input
             type="text"
             className="form-control"
@@ -39,7 +39,7 @@ const Addnote = () => {
           />
         </div>
         <div className="mb-3 d-flex">
-        <i class="fa-solid fa-file-pen"></i>
+        <i className="fa-solid fa-file-pen"></i>
         <textarea className="form-control"
             id="description"
             name="description"
@@ -53,7 +53,7 @@ const Addnote = () => {
           
         </div>
         <div className="mb-3 d-flex">
-        <i class="fa-solid fa-tag"></i>
+        <i className="fa-solid fa-tag"></i>
           <input
             type="text"
             className="form-control"
@@ -67,7 +67,7 @@ const Addnote = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-dark" onClick={handleClick}>
+        <button type="submit" className="btn btn-dark">
           Add Note
         </button>
       </form>

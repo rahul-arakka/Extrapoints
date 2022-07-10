@@ -13,7 +13,7 @@ const Notes = () => {
       fetchNotes();
     else {
       navigate('/login')
-      showAlert("Please Login to preceed");
+      showAlert("Please Login to preceed", 'warning');
     }
     // eslint-disable-next-line
   }, [])
@@ -45,8 +45,11 @@ const Notes = () => {
     }
   
   return (
-    <div className="container row my-3">
+    <div className="col notePage" >
+      <div className='noteBox d-flex'>
         <Addnote/>
+      </div>
+
           <button type="button" ref={refer} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Launch static backdrop modal
           </button>
@@ -109,14 +112,17 @@ const Notes = () => {
               </div>
             </div>
           </div>
-        <h2 className='container mx-2 my-2'>Your Notes</h2>
-        <div className="container mx-3">
-          {notes.length === 0 && <strong>No notes to display</strong>}
-        </div>
+        <div className="formDiv">
+        <h2 className='mx-2 my-2 formHeading'>Your Notes</h2>
+          {notes.length === 0 && <strong id='noNotes'>No notes to display</strong>}
+          <div className="row">
+
         {notes.map((note)=>{
-            return <Noteitem key={note._id} updateNote ={updateNote} note ={note}/>
+          return <Noteitem key={note._id} updateNote ={updateNote} note ={note}/>
         })}
-    </div>  
+        </div>
+        </div>  
+    </div>
     
   )
 }
