@@ -42,13 +42,20 @@
 }
 
 body{
-  background: url('./images/add_note2.jfif') no-repeat center center fixed;
+  background: url('./images/login.jpg') no-repeat center center fixed;
   background-size: cover;
   top: 0px;
   height: 100%;
   width: 100%;  
 }
-#form input, #form textarea{
+.notePage{
+  background: url('./images/new5.jpg') no-repeat center center fixed;
+  background-size: cover;
+  top: 0px;
+  height: 100%;
+  width: 100%;  
+}
+#form input, #form textarea, #noteform input, #noteform textarea{
   background: none;
   outline: none;
   border: none;
@@ -60,24 +67,25 @@ body{
   margin: 5px;
   padding: 7px;
 }
-.formDiv input::placeholder, .formDiv textarea::placeholder {
+.formDiv input::placeholder, .formDiv textarea::placeholder, #noteform textarea::placeholder, #noteform input::placeholder {
   color: rgb(2, 2, 2);
   opacity: 1; 
 }
 
 .formDiv{
-  float: right;
-  width: 50%;
-  margin: 7px 11px;
-  padding: 7px;
+  /* float: right; */
+  display: block;
+  width: 45%;
+  margin: 7px auto;
+  padding: 7px 18px;
 }
 
-#form textarea{
+#form textarea, #noteform textarea{
   border: 1px solid black;
 }
 
 
-#form i{
+#form i, #noteform i{
 font-size: x-large;
 padding-top: 15px;
 padding-right: 20px;
@@ -85,7 +93,7 @@ padding-right: 20px;
 
 .formHeading{
   border-bottom: 3px solid brown;
-  width: 550px;
+  width: 85%;
   margin: 4px auto;
   padding: 15px 10px 10px 0px;
   font-family: 'Times New Roman', Times, serif;
@@ -93,35 +101,31 @@ padding-right: 20px;
 }
 .noteBox{
   /* float: left; */
-  width: 670px;
+  width: 48%;
   margin: 7px;
   padding: 3px;
 }
 
 .addNote{
-  width: 500px;
+  width: 95%;
   margin: auto;
 }
 
-#form{
-  width: 65%;
+#form, #noteform{
+  width: 80%;
   margin: auto;
   padding: 7px 11px;
 }
 
 .btnlen{
-  display: flex;
-}
-
-#form button{
   margin: 10px auto;
   padding: 7px;
-  width: 100px;
+  width: 150px;
   border-radius: 10px;
 }
-/* .notePage{
+.notePage{
   display: flex;
-} */
+}
 
 .card{
   background: none;
@@ -133,10 +137,49 @@ padding-right: 20px;
   font-family: 'Times New Roman', Times, serif;
   font-size: x-large;
 }
-/* 
-@media only screen and ( max-width: 650px) {
+
+@media only screen and (max-width: 600px){
+
+  #form{
+    width: 95%;
+  }
+  .formDiv{
+    width: 97%
+  }
+  .formHeading{
+    width: 93%;
+  }
+  #noteform{
+    width: 93%;
+  }
   .notePage{
     display: block;
   }
+  .noteBox{
+    width: 95%;
+  }
 
-} */
+}
+
+
+@media only screen and ( min-width: 601px) and ( max-width: 991px){
+
+  #form{
+    width: 76%;
+  }
+  .formDiv{
+    width: 90%
+  }
+  .formHeading{
+    width: 86%;
+  }
+  #noteform{
+    width: 86%;
+  }
+  .notePage{
+    display: block;
+  }
+  .noteBox{
+    width: 95%;
+  }
+}

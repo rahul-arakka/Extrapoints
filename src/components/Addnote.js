@@ -22,7 +22,7 @@ const Addnote = () => {
   return (
     <div className="addNote">
       <h1 className="formHeading">Add a Note</h1>
-      <form className="my-2" id="form" style={{width:'90%'}}onSubmit={handleClick}>
+      <form className="my-2" id="noteform" onSubmit={handleClick}>
         <div className="mb-3 d-flex">
         <i className="fa-solid fa-pen-clip"></i>
           <input
@@ -67,9 +67,11 @@ const Addnote = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-dark">
+        <div className="btnlen">
+          <button type="submit" className="btn btn-dark">
           Add Note
-        </button>
+          </button>
+        </div>
       </form>
     </div>
   );

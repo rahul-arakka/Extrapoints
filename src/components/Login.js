@@ -46,7 +46,7 @@ const Login = () => {
     <div className="formDiv">
       <h1 className="formHeading">Login to Extrapoints</h1>
       <form onSubmit={handleSubmit} id="form">
-        <div className="mb-3 d-flex">
+        <div className="mb-3 my-2 d-flex">
         <i className="fa-solid fa-envelope"></i>
           <input
             type="email"

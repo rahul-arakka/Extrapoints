@@ -46,7 +46,7 @@ const Notes = () => {
   
   return (
     <div className="col notePage" >
-      <div className='noteBox d-flex'>
+      <div className='noteBox'>
         <Addnote/>
       </div>
 
