@@ -42,22 +42,15 @@
 }
 
 body{
-  background: url('./images/login.jpg') no-repeat center center fixed;
+  background: url('./images/qqq1.jpg') no-repeat center center fixed;
   background-size: cover;
   top: 0px;
   height: 100%;
   width: 100%;  
 }
-.notePage{
-  background: url('./images/new5.jpg') no-repeat center center fixed;
-  background-size: cover;
-  top: 0px;
-  height: 100%;
-  width: 100%;  
-}
-#form input, #form textarea, #noteform input, #noteform textarea{
+
+.formDiv input, .formDiv textarea, #noteform textarea, #noteform input{
   background: none;
-  outline: none;
   border: none;
   /* width: 300px; */
   font-family: 'Times New Roman', Times, serif;
